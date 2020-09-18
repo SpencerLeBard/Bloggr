@@ -9,6 +9,8 @@ export default new Vuex.Store({
   state: {
     profile: {},
     posts: [],
+    activePost: {},
+    activeComments: [],
   },
   mutations: {
     setProfile(state, profile) {
@@ -19,6 +21,12 @@ export default new Vuex.Store({
     },
     createPost(state, post) {
       state.posts = post
+    },
+    setActivePost(state, post) {
+      state.activePost = post
+    },
+    setComments(state, comments) {
+      state.activeComments = comments
     }
   },
   actions: {
@@ -44,6 +52,16 @@ export default new Vuex.Store({
         let res = await api.post("blogs", postData)
         console.log(res);
         commit("createPost", res.data)
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async getActivePost({ commit }, postId) {
+      try {
+        let res = await api.get("blogs/" + postId)
+        console.log(res);
+        commit("setActivePost", res.data)
+        commit("setComments", res.data.votes)
       } catch (error) {
         console.error(error);
       }
