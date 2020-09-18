@@ -2,7 +2,6 @@ import Vue from "vue";
 import Vuex from "vuex";
 import router from "../router";
 import { api } from "../services/AxiosService.js";
-import
 
 Vue.use(Vuex);
 

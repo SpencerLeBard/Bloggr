@@ -1,11 +1,11 @@
 <template>
-  <div class="post-component">
+  <div class="post-component col-3 m-5">
     <div class="card">
       <img class="card-img-top" :src="postProp.imgUrl" alt />
       <div class="card-body">
-        <p>{{postProp.title}}</p>
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
+        <h4 class="card-title">Blog Title</h4>
+        <h6>{{postProp.title}}</h6>
+        <p>{{postProp.body}}</p>
       </div>
     </div>
   </div>
