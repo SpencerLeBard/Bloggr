@@ -16,6 +16,9 @@ export default new Vuex.Store({
     },
     setPosts(state, posts) {
       state.posts = posts
+    },
+    createPost(state, post) {
+      state.posts = post
     }
   },
   actions: {
@@ -31,10 +34,21 @@ export default new Vuex.Store({
       try {
         let res = await api.get("blogs")
         commit("setPosts", res.data)
-        console.log(res);
       } catch (error) {
+        console.error(error);
 
       }
+    },
+    async createPost({ commit, }, postData) {
+      try {
+        let res = await api.post("blogs", postData)
+        console.log(res);
+        commit("createPost", res.data)
+      } catch (error) {
+        console.error(error);
+      }
     }
-  },
-});
+  }
+})
+
+
