@@ -16,6 +16,7 @@ export default {
   name: "postDetails",
   mounted() {
     this.$store.dispatch("getActivePost", this.$route.params.postId);
+    this.$store.dispatch("getComments", this.$route.params.postId);
   },
   data() {
     return {};

@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <form class="form-inline input" @submit.prevent="createComment">
+    <form class="form-inline input" @submit.prevent="comments">
       <div class="form-group">
         <input
           type="text"
@@ -9,6 +9,7 @@
           placeholder="Comment ..."
           aria-describedby="helpId"
         />
+        <button type="submit" class="btn btn-danger m-2">Create Comment</button>
       </div>
     </form>
   </div>
@@ -19,14 +20,23 @@ export default {
   name: "CommmentComponent",
   mounted() {},
   data() {
-    return {};
+    return {
+      newComment: {},
+    };
   },
   computed: {
-    comments() {
+    activeComments() {
       return this.$state.activeComments;
     },
   },
-  methods: {},
+  methods: {
+    addComments() {
+      let payload = {
+        blog:
+        body:
+      }
+    },
+  },
   components: {},
 };
 </script>
