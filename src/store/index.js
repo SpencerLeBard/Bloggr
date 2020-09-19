@@ -25,12 +25,9 @@ export default new Vuex.Store({
     setActivePost(state, post) {
       state.activePost = post
     },
-    // getActiveComments(state, comments) {
-    //   state.activeComments = comments
-    // },
-    Comments(state, comments) {
-      state.activeComments = comments
-    },
+
+
+
   },
   actions: {
     async getProfile({ commit }) {
@@ -71,7 +68,7 @@ export default new Vuex.Store({
     //   try {
     //     let res = await api.get("blogs/" + postId + "/comments")
     //     console.log(res);
-    //     dispatch("getActiveComments", postId.body)
+    //     commit("getActiveComments", postId.body)
     //   } catch (error) {
     //     console.error(error);
 

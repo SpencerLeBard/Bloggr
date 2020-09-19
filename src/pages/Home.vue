@@ -1,11 +1,8 @@
 <template>
   <div class="home container-fluid">
     <div class="row">
-      <form
-        class="form-inline input search-box bg-primary col-11 d-flex justify-content-center"
-        @submit.prevent="createPost"
-      >
-        <div class="form-group">
+      <form class="form-inline input search-box bg-primary col-10" @submit.prevent="createPost">
+        <div class="form-group col-12">
           <input
             type="text"
             v-model="newPost.title"
@@ -15,13 +12,13 @@
           />
           <input
             type="text"
-            class="form-control col-6 blog-text"
+            class="form-control col-12 blog-text"
             v-model="newPost.body"
             placeholder="Type Blog here ..."
             aria-describedby="helpId"
           />
         </div>
-        <button type="submit" class="btn btn-danger">Create Post</button>
+        <button type="submit" class="btn btn-danger m-3">Create Post</button>
       </form>
       <postComponent v-for="post in posts" :key="post.id" :postProp="post" />
     </div>
@@ -59,12 +56,11 @@ export default {
 <style scoped>
 .search-box {
   border-radius: 10px;
-  background-color: ;
   margin: 7vh;
-  padding: 5vh;
+  padding: 3vh;
 }
 .blog-text {
-  height: 25vh;
+  height: 13vh;
   width: 30vw;
 }
 </style>

@@ -19,28 +19,30 @@
 <script>
 export default {
   name: "CommmentComponent",
-  mounted() {
-    this.$store.dispatch("activeComments", this.newComment);
-  },
+  // mounted() {
+  //   this.$store.dispatch("activeComments", this.newComment);
+  // },
   data() {
     return {
       newComment: {},
+      //   };
+      // },
+      // computed: {
+      // activeComments() {
+      //   return this.$state.activeComments;
+      //   },
+      // },
+      methods: {
+        // addComments() {
+        //   let payload = {
+        //     blog: this.$route.params.postId,
+        //     body: this.$route.params.body,
+        //   };
+        // },
+      },
+      components: {},
     };
   },
-  computed: {
-    activeComments() {
-      return this.$state.activeComments;
-    },
-  },
-  methods: {
-    addComments() {
-      let payload = {
-        blog: this.$route.params.postId,
-        body: this.$route.params.body,
-      };
-    },
-  },
-  components: {},
 };
 </script>
 
