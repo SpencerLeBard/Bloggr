@@ -1,6 +1,6 @@
 <template>
-  <div class="card p-2 bg-primary">
-    <form class="form-inline input" @submit.prevent="addomments">
+  <div class="card p-2 bg-primary coment-component">
+    <!-- <form class="form-inline input" @submit.prevent="addComments">
       <div class="form-group">
         <input
           type="text"
@@ -11,16 +11,17 @@
         />
         <button type="submit" class="btn btn-danger m-2">Create Comment</button>
       </div>
-    </form>
-    <!-- <p>{{activeComments.body}}</p> -->
+    </form>-->
+    <p>{{commentProp.body}}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CommmentComponent",
+  name: "commment-component",
+  props: ["commentProp"],
   mounted() {
-    this.$store.dispatch("activeComments");
+    this.$store.dispatch("getComments");
   },
   data() {
     return {
@@ -42,7 +43,7 @@ export default {
       },
       components: {},
       computed: {
-        comment() {
+        comments() {
           return this.$store.state.activeComments;
         },
       },

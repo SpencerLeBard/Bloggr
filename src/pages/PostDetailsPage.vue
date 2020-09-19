@@ -6,11 +6,24 @@
         <h5>{{post.body}}</h5>
       </div>
     </div>
+    <div class="row"></div>
     <div class="row">
-      <div class="col-6 ml-5 p-1">
-        <CommentComponent />
-        <div class="card bg-primary">{{comments}}</div>
+      <div class="col-5 card bg-primary">
+        <form class="form-inline input" @submit.prevent="addComments">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Comment ..."
+              aria-describedby="helpId"
+            />
+            <button type="submit" class="btn btn-danger m-2">Create Comment</button>
+          </div>
+        </form>
       </div>
+    </div>
+    <div class="col-4 ml- p-1 m-3">
+      <CommentComponent v-for="comment in comments" :key="comment.id" :commentProp="comment" />
     </div>
   </div>
 </template>
