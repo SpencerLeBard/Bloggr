@@ -1,11 +1,15 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="post-details card col-6 m-5">
-        <p>{{post.title}}</p>
-        <p>{{post.body}}</p>
+      <div class="post-details card col-6 m-5 p-3 bg-primary">
+        <h2>{{post.title}}</h2>
+        <h5>{{post.body}}</h5>
       </div>
-      <CommentComponent />
+    </div>
+    <div class="row">
+      <div class="col-6 ml-5 p-1">
+        <CommentComponent />
+      </div>
     </div>
   </div>
 </template>

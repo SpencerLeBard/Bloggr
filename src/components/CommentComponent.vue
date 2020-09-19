@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card p-2 bg-primary">
     <form class="form-inline input" @submit.prevent="addomments">
       <div class="form-group">
         <input

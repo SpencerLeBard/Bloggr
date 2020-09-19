@@ -1,12 +1,12 @@
 <template>
   <div class="home container-fluid">
     <div class="row">
-      <form class="form-inline input" @submit.prevent="createPost">
+      <form class="form-inline input ml-2 search-box bg-primary" @submit.prevent="createPost">
         <div class="form-group">
           <input
             type="text"
             v-model="newPost.title"
-            class="form-control"
+            class="form-control p-3 m-2"
             placeholder="Title of Blog..."
             aria-describedby="helpId"
           />
@@ -53,3 +53,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.search-box {
+  border-radius: 10px;
+  background-color: ;
+  height: 10vh;
+  margin-top: 5vh;
+}
+</style>
