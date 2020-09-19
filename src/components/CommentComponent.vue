@@ -19,9 +19,9 @@
 <script>
 export default {
   name: "CommmentComponent",
-  // mounted() {
-  //   this.$store.dispatch("activeComments", this.newComment);
-  // },
+  mounted() {
+    this.$store.dispatch("activeComments");
+  },
   data() {
     return {
       newComment: {},
@@ -41,6 +41,11 @@ export default {
         // },
       },
       components: {},
+      computed: {
+        comment() {
+          return this.$store.state.activeComments;
+        },
+      },
     };
   },
 };
