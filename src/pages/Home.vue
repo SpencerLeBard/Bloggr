@@ -9,7 +9,7 @@
           <input
             type="text"
             v-model="newPost.title"
-            class="form-control m-5"
+            class="form-control m-2"
             placeholder="Title of Blog..."
             aria-describedby="helpId"
           />
