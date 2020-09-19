@@ -1,24 +1,27 @@
 <template>
   <div class="home container-fluid">
     <div class="row">
-      <form class="form-inline input ml-2 search-box bg-primary" @submit.prevent="createPost">
+      <form
+        class="form-inline input search-box bg-primary col-11 d-flex justify-content-center"
+        @submit.prevent="createPost"
+      >
         <div class="form-group">
           <input
             type="text"
             v-model="newPost.title"
-            class="form-control p-3 m-2"
+            class="form-control m-5"
             placeholder="Title of Blog..."
             aria-describedby="helpId"
           />
           <input
             type="text"
-            class="form-control"
+            class="form-control col-6 blog-text"
             v-model="newPost.body"
             placeholder="Type Blog here ..."
             aria-describedby="helpId"
           />
         </div>
-        <button type="submit" class="btn btn-danger m-2">Create Post</button>
+        <button type="submit" class="btn btn-danger">Create Post</button>
       </form>
       <postComponent v-for="post in posts" :key="post.id" :postProp="post" />
     </div>
@@ -57,7 +60,11 @@ export default {
 .search-box {
   border-radius: 10px;
   background-color: ;
-  height: 10vh;
-  margin-top: 5vh;
+  margin: 7vh;
+  padding: 5vh;
+}
+.blog-text {
+  height: 25vh;
+  width: 30vw;
 }
 </style>
