@@ -4,7 +4,7 @@
       class="card bg-primary rounded"
       :to="{name:'post-details', params:{postId: postProp.id}}"
     >
-      <!-- <img class="card-img-top" :src="postProp.imgUrl" alt /> -->
+      <!-- NOTE <img class="card-img-top" :src="postProp.imgUrl" alt /> -->
       <div class="card-body">
         <div class="card-title">
           <h2 class="text-dark">{{postProp.title}}</h2>

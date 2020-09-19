@@ -1,17 +1,5 @@
 <template>
   <div class="card p-2 bg-primary coment-component">
-    <!-- <form class="form-inline input" @submit.prevent="addComments">
-      <div class="form-group">
-        <input
-          type="text"
-          v-model="newComment.body"
-          class="form-control"
-          placeholder="Comment ..."
-          aria-describedby="helpId"
-        />
-        <button type="submit" class="btn btn-danger m-2">Create Comment</button>
-      </div>
-    </form>-->
     <p>{{commentProp.body}}</p>
   </div>
 </template>
