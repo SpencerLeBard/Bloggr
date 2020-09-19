@@ -1,5 +1,5 @@
 <template>
-  <div class="card p-2 bg-primary coment-component">
+  <div class="card p-2 bg-primary comment-component">
     <p>{{commentProp.body}}</p>
   </div>
 </template>

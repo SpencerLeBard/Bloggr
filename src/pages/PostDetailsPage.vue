@@ -1,28 +1,27 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row post-card">
       <div class="post-details card col-6 m-5 p-3 bg-primary">
         <h2>{{post.title}}</h2>
         <h5>{{post.body}}</h5>
-      </div>
-    </div>
-    <div class="row"></div>
-    <div class="row">
-      <div class="col-5 card bg-primary">
-        <form class="form-inline input" @submit.prevent="addComments">
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Comment ..."
-              aria-describedby="helpId"
-            />
-            <button type="submit" class="btn btn-danger m-2">Create Comment</button>
+        <div class="row">
+          <div class="col-5 bg-primary">
+            <form class="form-inline input" @submit.prevent="addComments">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Comment ..."
+                  aria-describedby="helpId"
+                />
+                <button type="submit" class="btn btn-danger m-2">Create Comment</button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
-    <div class="col-4 ml- p-1 m-3">
+    <div class="col-6 comments-card">
       <CommentComponent v-for="comment in comments" :key="comment.id" :commentProp="comment" />
     </div>
   </div>
@@ -54,5 +53,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped >
+.comments-card {
+  margin-left: 32px;
+}
+.post-card {
+  margin-bottom: -25px;
+}
 </style>

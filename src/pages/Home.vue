@@ -20,6 +20,7 @@
         </div>
         <button type="submit" class="btn btn-danger m-3">Create Post</button>
       </form>
+      <img src="Octopus.gif" alt="hello" />
       <postComponent v-for="post in posts" :key="post.id" :postProp="post" />
     </div>
   </div>
