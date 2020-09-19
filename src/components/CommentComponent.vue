@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <form class="form-inline input" @submit.prevent="comments">
+    <form class="form-inline input" @submit.prevent="addomments">
       <div class="form-group">
         <input
           type="text"
@@ -12,13 +12,16 @@
         <button type="submit" class="btn btn-danger m-2">Create Comment</button>
       </div>
     </form>
+    <!-- <p>{{activeComments.body}}</p> -->
   </div>
 </template>
 
 <script>
 export default {
   name: "CommmentComponent",
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("activeComments", this.newComment);
+  },
   data() {
     return {
       newComment: {},
@@ -32,9 +35,9 @@ export default {
   methods: {
     addComments() {
       let payload = {
-        blog:
-        body:
-      }
+        blog: this.$route.params.postId,
+        body: this.$route.params.body,
+      };
     },
   },
   components: {},

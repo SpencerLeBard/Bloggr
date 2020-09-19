@@ -1,16 +1,14 @@
 <template>
-  <div class="row">
-    <div class="post-component col-3 d-flex m-3">
-      <router-link class="card" :to="{name:'post-details', params:{postId: postProp.id}}">
-        <img class="card-img-top" :src="postProp.imgUrl" alt />
-        <div class="card-body">
-          <div class="card-title">
-            <h2>{{postProp.title}}</h2>
-            <h3>{{postProp.creatorEmail}}</h3>
-          </div>
+  <div class="post-component col-3 d-flex m-3">
+    <router-link class="card" :to="{name:'post-details', params:{postId: postProp.id}}">
+      <!-- <img class="card-img-top" :src="postProp.imgUrl" alt /> -->
+      <div class="card-body">
+        <div class="card-title">
+          <h2>{{postProp.title}}</h2>
+          <h3>{{postProp.creatorEmail}}</h3>
         </div>
-      </router-link>
-    </div>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -30,5 +28,14 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+.post-component {
+  transition: 0.25s ease;
+  cursor: pointer;
+  max-height: 30vh;
+  max-width: 40vw;
+}
+.post-component:hover {
+  transform: scale(1.05);
+}
 </style>

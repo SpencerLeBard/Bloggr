@@ -20,8 +20,8 @@
         </div>
         <button type="submit" class="btn btn-danger m-2">Create Post</button>
       </form>
+      <postComponent v-for="post in posts" :key="post.id" :postProp="post" />
     </div>
-    <postComponent v-for="post in posts" :key="post.id" :postProp="post" />
   </div>
 </template>
 
