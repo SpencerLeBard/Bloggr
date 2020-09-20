@@ -87,14 +87,15 @@ export default new Vuex.Store({
         console.error(error);
       }
     },
-    //     async editPost({ commit }, postData) {
-    //       try {
-    //         let res = await api.put("blogs/" + postData.id, postData)
-    //         commit("setActivePost", res.data)
-    //       } catch (error) {
-    //         console.error(error)
-    //   }
-    // }
+    async editPost({ commit }, postId) {
+      try {
+        let res = await api.put('blogs/' + postId, postId)
+        console.log(res);
+        commit("setActivePost", res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
   }
 
 })

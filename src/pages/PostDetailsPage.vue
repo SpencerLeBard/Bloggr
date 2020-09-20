@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row post-card">
       <div class="post-details card col-6 m-5 p-3 bg-primary">
+        <h2>{{post.title}}</h2>
         <i
           class="fa fa-pencil"
           aria-hidden="true"
           @click="editToggle = !editToggle"
           v-if="isCreator"
         ></i>
-        <h2>{{post.title}}</h2>
         <h5>{{post.body}}</h5>
         <div class="row">
           <div class="col-5 bg-primary">
