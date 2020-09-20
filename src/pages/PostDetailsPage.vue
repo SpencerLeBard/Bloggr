@@ -6,7 +6,7 @@
         <h5>{{post.body}}</h5>
         <div class="row">
           <div class="col-5 bg-primary">
-            <form class="form-inline input" @submit.prevent="addComments">
+            <form class="form-inline input">
               <div class="form-group">
                 <input
                   type="text"
@@ -14,7 +14,8 @@
                   placeholder="Comment ..."
                   aria-describedby="helpId"
                 />
-                <button type="submit" class="btn btn-danger m-2">Create Comment</button>
+                <button type="submit" class="btn btn-success m-2">Create Comment</button>
+                <button class="btn btn-danger" @click="deletePost">Delete Post</button>
               </div>
             </form>
           </div>
@@ -46,7 +47,11 @@ export default {
       return this.$store.state.activeComments;
     },
   },
-  methods: {},
+  methods: {
+    deletePost() {
+      this.$store.dispatch("deletePost", this.post._id);
+    },
+  },
   components: {
     CommentComponent,
   },
