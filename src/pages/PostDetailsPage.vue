@@ -2,6 +2,12 @@
   <div class="container">
     <div class="row post-card">
       <div class="post-details card col-6 m-5 p-3 bg-primary">
+        <i
+          class="fa fa-pencil"
+          aria-hidden="true"
+          @click="editToggle = !editToggle"
+          v-if="isCreator"
+        ></i>
         <h2>{{post.title}}</h2>
         <h5>{{post.body}}</h5>
         <div class="row">
@@ -14,8 +20,9 @@
                   placeholder="Comment ..."
                   aria-describedby="helpId"
                 />
-                <button type="submit" class="btn btn-success m-2">Create Comment</button>
-                <button class="btn btn-danger" @click="deletePost">Delete Post</button>
+                <button type="submit" class="btn btn-dark m-2">Create Comment</button>
+                <button class="btn btn-dark" @click="deletePost">Delete Post</button>
+                <button type="submit" class="btn btn-dark ml-2" @click="editPost">Edit Post</button>
               </div>
             </form>
           </div>
@@ -37,7 +44,7 @@ export default {
     this.$store.dispatch("getComments", this.$route.params.postId);
   },
   data() {
-    return {};
+    return { postData: {}, editToggle: false };
   },
   computed: {
     post() {
@@ -46,10 +53,18 @@ export default {
     comments() {
       return this.$store.state.activeComments;
     },
+    isCreator() {
+      return this.$store.state.profile.email == this.post.creatorEmail;
+    },
   },
   methods: {
     deletePost() {
       this.$store.dispatch("deletePost", this.post._id);
+    },
+    editPost() {
+      this.postData.id = this.$route.params.postId;
+      this.$store.dispatch("editPost", this.postData);
+      this.editToggle = false;
     },
   },
   components: {
@@ -64,5 +79,6 @@ export default {
 }
 .post-card {
   margin-bottom: -25px;
+  width: 75vw;
 }
 </style>
