@@ -20,7 +20,11 @@
         </div>
         <button type="submit" class="btn btn-danger m-3">Create Post</button>
       </form>
-      <img src="Octopus.gif" alt="hello" />
+      <img
+        class="octopus-pic"
+        src="https://i.pinimg.com/originals/51/59/42/515942b8ee6d77b4de286ba64406a0b5.gif"
+        alt="hello"
+      />
       <postComponent v-for="post in posts" :key="post.id" :postProp="post" />
     </div>
   </div>
@@ -59,9 +63,14 @@ export default {
   border-radius: 10px;
   margin: 7vh;
   padding: 3vh;
+  width: 10vw;
 }
 .blog-text {
   height: 13vh;
   width: 30vw;
+}
+.octopus-pic {
+  height: 20vh;
+  max-width: 20vw;
 }
 </style>

@@ -35,7 +35,10 @@
           v-if="$auth.isAuthenticated"
           :class="{ active: $route.name == 'Profile' }"
         >
-          <router-link class="nav-link" :to="{ name: 'Profile' }">Profile</router-link>
+          <router-link class="nav-link" :to="{ name: 'Profile' }">
+            Profile
+            <i class="fa fa-tint water-icon" aria-hidden="true"></i>
+          </router-link>
         </li>
       </ul>
       <span class="navbar-text">
@@ -68,4 +71,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+</style>
