@@ -28,7 +28,9 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" :class="{ active: $route.name == 'Home' }">
-          <router-link :to="{ name: 'Home' }" class="nav-link">Home</router-link>
+          <router-link :to="{ name: 'Home' }" class="nav-link">
+            <i class="fa fa-tint water-icon" aria-hidden="true"></i>Home
+          </router-link>
         </li>
         <li
           class="nav-item"
@@ -36,8 +38,8 @@
           :class="{ active: $route.name == 'Profile' }"
         >
           <router-link class="nav-link" :to="{ name: 'Profile' }">
-            Profile
             <i class="fa fa-tint water-icon" aria-hidden="true"></i>
+            Profile
           </router-link>
         </li>
       </ul>

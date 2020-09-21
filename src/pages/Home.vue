@@ -1,8 +1,8 @@
 <template>
   <div class="home container-fluid">
     <div class="row">
-      <form class="form-inline input search-box bg-primary col-10" @submit.prevent="createPost">
-        <div class="form-group col-12">
+      <form class="form-inline input search-box bg-primary col-8" @submit.prevent="createPost">
+        <div class="form-group col-6">
           <input
             type="text"
             v-model="newPost.title"
@@ -12,13 +12,13 @@
           />
           <input
             type="text"
-            class="form-control col-12 blog-text"
+            class="form-control col-8 blog-text"
             v-model="newPost.body"
             placeholder="Type Blog here ..."
             aria-describedby="helpId"
           />
+          <button type="submit" class="btn btn-danger m-3">Create Post</button>
         </div>
-        <button type="submit" class="btn btn-danger m-3">Create Post</button>
       </form>
       <img
         class="octopus-pic"
@@ -63,14 +63,15 @@ export default {
   border-radius: 10px;
   margin: 7vh;
   padding: 3vh;
-  width: 10vw;
 }
 .blog-text {
   height: 13vh;
   width: 30vw;
 }
 .octopus-pic {
-  height: 20vh;
-  max-width: 20vw;
+  height: 40vh;
+  margin-top: 2vh;
+  margin-left: 2vw;
+  border-radius: 50px;
 }
 </style>
